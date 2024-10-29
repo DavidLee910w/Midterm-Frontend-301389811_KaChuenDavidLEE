@@ -1,5 +1,5 @@
-import { Outlet, NavLink, Link } from "react-router-dom";
-import image_logo from "../../assets/image_logo.JPG"
+import { Outlet, NavLink } from "react-router-dom";
+import image_logo from "../../assets/image_logo.JPG";
 
 const Header = () => {
   return (
@@ -9,7 +9,12 @@ const Header = () => {
           <NavLink className="navbar-brand" to="/">
             <img src={image_logo} alt="logo" style={{ width: 40 }} />
           </NavLink>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
@@ -20,9 +25,9 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a class="nav-link" href="/projects">
+                <NavLink className="nav-link" to="/projects"> {/* Changed href to to */}
                   <i className="fas fa-project-diagram"></i> Projects
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
@@ -36,8 +41,7 @@ const Header = () => {
 
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Header;
-
